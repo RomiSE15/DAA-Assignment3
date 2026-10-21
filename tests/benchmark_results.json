@@ -1,0 +1,81 @@
+{
+  "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "unknown",
+  "timer": "time.perf_counter",
+  "runs": 3,
+  "warmup": 1,
+  "timed": "algorithm body only, including adjacency-list and heap construction",
+  "not_timed": "JSON parsing, printing, and generation of the edge list",
+  "rows": [
+    {
+      "n": 2000,
+      "m": 8000,
+      "seed": 20261021,
+      "weight_range": [
+        -1000,
+        1000
+      ],
+      "cost": -1395898,
+      "components": 1,
+      "kruskal_seconds": [
+        0.012169199995696545,
+        0.012434300035238266,
+        0.012149900197982788
+      ],
+      "kruskal_median": 0.012169199995696545,
+      "prim_seconds": [
+        0.015098700067028403,
+        0.015950199915096164,
+        0.018734899815171957
+      ],
+      "prim_median": 0.015950199915096164
+    },
+    {
+      "n": 20000,
+      "m": 80000,
+      "seed": 20261022,
+      "weight_range": [
+        -1000,
+        1000
+      ],
+      "cost": -13968940,
+      "components": 12,
+      "kruskal_seconds": [
+        0.24373179976828396,
+        0.22660779999569058,
+        0.2096208999864757
+      ],
+      "kruskal_median": 0.22660779999569058,
+      "prim_seconds": [
+        0.3529571001417935,
+        0.37072969996370375,
+        0.36144460015930235
+      ],
+      "prim_median": 0.36144460015930235
+    },
+    {
+      "n": 100000,
+      "m": 250000,
+      "seed": 20261023,
+      "weight_range": [
+        -1000,
+        1000
+      ],
+      "cost": -52909328,
+      "components": 710,
+      "kruskal_seconds": [
+        0.74585000006482,
+        0.7483618999831378,
+        0.7541940999217331
+      ],
+      "kruskal_median": 0.7483618999831378,
+      "prim_seconds": [
+        1.4768065998796374,
+        1.5065625000279397,
+        1.5762426999863237
+      ],
+      "prim_median": 1.5065625000279397
+    }
+  ]
+}
