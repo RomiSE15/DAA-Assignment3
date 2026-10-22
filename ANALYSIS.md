@@ -124,13 +124,13 @@ Conditions: command `python tests/benchmark.py`; Python 3.12.0 (64-bit); Windows
 
 Results (seconds, three runs and the median):
 
-- n = 2000, m = 8000: cost -1395898, components 1. Kruskal 0.014101, 0.015528, 0.019289, median 0.015528. Prim 0.017095, 0.018096, 0.021277, median 0.018096.
-- n = 20000, m = 80000: cost -13968940, components 12. Kruskal 0.254544, 0.215335, 0.190535, median 0.215335. Prim 0.425603, 0.387280, 0.332612, median 0.387280.
-- n = 100000, m = 250000: cost -52909328, components 710. Kruskal 0.764288, 0.773463, 0.747280, median 0.764288. Prim 1.443828, 1.489783, 1.694385, median 1.489783.
+- n = 2000, m = 8000: cost -1395898, components 1. Kruskal 0.012169, 0.012434, 0.012150, median 0.012169. Prim 0.015099, 0.015950, 0.018735, median 0.015950.
+- n = 20000, m = 80000: cost -13968940, components 12. Kruskal 0.243732, 0.226608, 0.209621, median 0.226608. Prim 0.352957, 0.370730, 0.361445, median 0.361445.
+- n = 100000, m = 250000: cost -52909328, components 710. Kruskal 0.745850, 0.748362, 0.754194, median 0.748362. Prim 1.476807, 1.506563, 1.576243, median 1.506563.
 
-Observations: Kruskal was faster than Prim at every size, by a factor of about 1.2, 1.8 and 1.9. From 8000 to 80000 edges the input grows 10 times and the medians grow about 14 times for Kruskal and about 21 times for Prim. From 80000 to 250000 edges the input grows 3.1 times and the medians grow about 3.6 and 3.8 times. This is slightly above linear, as expected for a sort or a heap with a large Python constant. Prim stores every edge in two adjacency lists and keeps stale entries in the heap until they are popped, while Kruskal sorts once and then does nearly linear DSU work. The asymptotic bounds come from the sort and the heap, not from these three measurements
+Observations: Kruskal was faster than Prim at every size, by a factor of about 1.3, 1.6 and 2.0. From 8000 to 80000 edges the input grows 10 times and the medians grow about 19 times for Kruskal and about 23 times for Prim. From 80000 to 250000 edges the input grows 3.1 times and the medians grow about 3.3 and 4.2 times. This is somewhat above linear, as expected for a sort or a heap with a large Python constant. Prim stores every edge in two adjacency lists and keeps stale entries in the heap until they are popped, while Kruskal sorts once and then does nearly linear DSU work. The asymptotic bounds come from the sort and the heap, not from these three measurements
 
-Limitations: these are three random graphs, not worst cases, and three runs per size are few. The runs were made on a laptop, so some noise is expected (for example the three Kruskal runs at n = 20000 fall from 0.25 s to 0.19 s). Another machine or Python version can change the numbers
+Limitations: these are three random graphs, not worst cases, and three runs per size are few. The runs were made on a laptop, so some noise is expected (for example the three Kruskal runs at n = 20000 fall from 0.24 s to 0.21 s). Another machine or Python version can change the numbers
 
 ## Sources and AI use
 
